@@ -1,48 +1,6 @@
 #include "lib.h"
 #include "kernel.h"
 
-/*
-
-	// clase de acceso al puerto serie
-	class AccordSerial {
-
-		protected $o;
-		protected $h;
-
-		// constructor y parámetros
-		function __construct($o) {
-			$this->o=$o;
-		}
-
-		// abrir puerto
-		function open() {
-			passthru("stty -F ".$this->o["dev"]." ".$this->o["bauds"]." cs".$this->o["bits"]." -cstopb -parenb ignbrk -brkint -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke noflsh -ixon -crtscts");
-			if (!$this->h=fopen($this->o["dev"], "rw+b")) return false;
-			stream_set_blocking($this->h, false);
-			return true;
-		}
-
-		// leer del puerto
-		function read() {
-			if (feof($this->h)) return false;
-			return fread($this->h, 1024);
-		}
-
-		// escribir datos
-		function write($d) {
-			if (feof($this->h)) return false;
-			return fwrite($this->h, $d);
-		}
-
-		// cerrar puerto
-		function close() {
-			fclose($this->h);
-		}
-
-	}
-
-*/
-
 // creates a new execution environment containing the built-in functions
 v8::Persistent<v8::Context> LIB::createShellContext() {
 

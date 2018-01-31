@@ -7,7 +7,7 @@ if (lib) {
 		lib.echo("Connecting to "+device+"\n");
 		if (lib.serial.open(serial)) {
 			lib.echo("Connected successfully, waiting for data.\n");
-			if (!lib.serial.write(serial, "PRUEBAAAAAAAAAAAA")) lib.echo("Cannot write!\n");
+			if (!lib.serial.write(serial, "TEST!!")) lib.echo("Cannot write!\n");
 			while (true) {
 				var n=lib.serial.read(serial);
 				if (n<0) break; // connection closed
